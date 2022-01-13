@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./base.css">
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="./asset/font/fontawesome-free-6.0.0-beta2-web/css/all.min.css">
+    <title>Motor</title>
+</head>
+<body>
+    <section class="section-main">
+        <!-- HEADER / NAVIGATION -->
+        <header class="section-header">
+            <a href="" class="section-header__logo-has-QR-bridge section-header__logo-has-QR"><img src="./project 12 img/logo.png" class="section-header__logo" alt=""></a>
+            <div class="section-header__search">
+                <div class="section-header__search-input-wrap">
+                    <input type="text" class="section-header__search-input" placeholder="Enter to search for products">
+                </div>
+            </div>
+            <!-- HEADER / QR CODE -->
+            <div class="section-header__qr">
+                <img src=".//project 12 img/Qr_code.png" alt="" class="section-header__qr-img">
+                <div class="section-header__qr-app">
+                    <a href="" class="section-header__qr-link">
+                        <img src="./project 12 img/appstore.png" alt="" class="section-header__qr-download-img">
+                    </a>
+                    <a href="" class="section-header__qr-link">
+                        <img src="./project 12 img/ggplay.png" alt="" class="section-header__qr-download-img">
+                    </a>
+                </div>
+            </div>
+            <ul class="section-header__navigation">
+                <li><a href="">Top Features</a></li>
+                <li><a href="https://www.facebook.com/phucloi.nguyen.3344/" target="_blank">Gallery</a></li>
+                <li><a href="">Store</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </header>
+        <!-- CONTENT / BODY -->
+        <div class="section-content">
+            <h2 class="section-content__heading">Ready To <span class="section-content__heading-span">Race</span></h2>
+            <a href="#" class="section-content__btn js-btn-ridenow">Ride Now</a>
+            <img src="./project 12 img/bike.png" alt="" class="section-content__img">
+        </div>
+
+        <!-- SLIDER -->
+        <div class="section-slider">
+            <div class="section-slider__slides section-slider__slides-active"> <!-- FIRST ACTIVE-->
+                <h2 class="section-slider__slides-heading"><span class="section-slider__slides-heading-span">Engine</span><br>599 CC</h2>
+                <h2 class="section-slider__slides-heading"><span class="section-slider__slides-heading-span">Max Speed</span><br>260 Kmph</h2>
+            </div>
+            <div class="section-slider__slides">
+                <h2 class="section-slider__slides-heading"><span class="section-slider__slides-heading-span">Mileage</span><br>14 Kmpl</h2>
+                <h2 class="section-slider__slides-heading"><span class="section-slider__slides-heading-span">0-100 Kmph</span><br>4 Seconds</h2>
+            </div>
+            <div class="section-slider__slides">
+                <h2 class="section-slider__slides-heading"><span class="section-slider__slides-heading-span">Wheels</span><br>17-inch Alloy</h2>
+                <h2 class="section-slider__slides-heading"><span class="section-slider__slides-heading-span">Tyre Type</span><br>Tubeless</h2>
+            </div>
+        </div>
+        <!-- FOOTER -->
+        <div class="section-footer">
+            <ul class="section-footer__sci">
+                <li><a href="https://www.facebook.com/phucloi.nguyen.3344/" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a></li>
+                <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+                <li><a href="https://www.instagram.com/karma.2710/" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a></li>
+            </ul>
+            <div class="section-footer__dots">
+                <span class="section-footer__dots-dot section-footer__dots-dot-active"></span>
+                <span class="section-footer__dots-dot"></span>
+                <span class="section-footer__dots-dot"></span>
+            </div>
+        </div>
+    </section>
+    <!-- Modal -->
+    <div class="modal js-modal">
+        <div class="modal-container js-modal-container">
+              <div class="modal-close js-modal-close">
+                <i class="ti-close"></i>
+              </div>
+              <header class="modal-header">
+                Login Form
+              </header>
+              <div class="modal-body">
+                    <!-- Email or Phone -->
+                    <label for="" class="modal-label">
+                        Email or Phone
+                    </label>
+                    <input type="email" class="modal-input" required placeholder="Email or Phone">
+                    <!-- Password -->
+                    <label for="" class="modal-label">
+                        Password
+                    </label>
+                    <input type="password" class="modal-input" required placeholder="Password">
+                    <a href="#" class="forgot-pw">Forgot Password?</a>
+                    <button type="button" class="login-btn">LOGIN</button>
+                    <div class="member-signup">Not a member? <a href="#">Sign Up now</a></div>
+              </div>
+        </div>
+  </div>
+
+    <!-- ION-ICON FILE IMPORT / INSTALLATION -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!-- USE JAVASCRIPT FOR THE WEBSITE -->
+    <script>
+        const slides = document.querySelectorAll('.section-slider__slides')
+        const dots = document.querySelectorAll('.section-footer__dots-dot')
+
+        function setActive(i){
+            for (slide of slides)
+            slide.classList.remove('section-slider__slides-active')
+            slides[i].classList.add('section-slider__slides-active')
+            for (dot of dots)
+            dot.classList.remove('section-footer__dots-dot-active')
+            dots[i].classList.add('section-footer__dots-dot-active')
+        }
+        for(let j=0;j<dots.length;j++){
+            dots[j].addEventListener('click',function(){
+                setActive(j)
+            })
+        }
+        
+    </script>
+    <!-- Modal -->
+    <script>
+        const btnRideNow=document.querySelector(".js-btn-ridenow")
+        const modal=document.querySelector(".js-modal")
+        const modalClose=document.querySelector(".js-modal-close")
+        const modalContainer=document.querySelector(".js-modal-container")
+        function showLoginForm(){
+          modal.classList.add('open')
+        }
+        function hideLoginForm(){
+          modal.classList.remove('open')
+        }
+        btnRideNow.addEventListener('click',showLoginForm)
+        modalClose.addEventListener('click',hideLoginForm)
+        modal.addEventListener('click',hideLoginForm)
+        modalContainer.addEventListener('click',function(event){
+          event.stopPropagation()
+        })
+    </script>
+</body>
+</html>

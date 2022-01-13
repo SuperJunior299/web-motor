@@ -1,0 +1,331 @@
+/* Main */
+.section-main{
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(#1c1c1c,#323232);
+    padding: 30px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.section-main::before{
+    content: "Adventure";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 16vw;
+    font-weight: 700;
+    color: rgba(255,255,255,0.05);
+}
+
+
+/* Header */
+.section-header{
+    position: absolute; /* Position: relative in the section (main) */
+    top: 0;
+    left: 0;
+    width: 1200px;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+}
+.section-header__logo{
+    max-width: 80px;
+    object-fit: contain;
+    overflow-y: hidden;
+}
+/* QR CODE */
+.section-header__qr{
+    width: 186px;
+    background-color: var(--white);
+    position: absolute;
+    left: 3%;
+    top: 75%;
+    padding: 8px;
+    border-radius: 2px;
+    margin-top: 4px;
+    animation: fadeIn ease-in 0.25s;
+    z-index: 1000;
+    display: none;
+}
+
+.section-header__qr-img{
+    width: 100%;
+}
+.section-header__qr-app{
+    display: flex;
+}
+.section-header__qr-link{
+
+}
+.section-header__qr-download-img{
+    height: 16px;
+    margin-right: 28px;
+}
+.section-header__logo-has-QR:hover ~ .section-header__qr{
+    display: block;
+}
+/* SEARCH */
+.section-header__search{
+    display: flex;
+    flex: 1;
+}
+.section-header__search-input-wrap{
+    max-width: 100%;
+    height: 100%;
+    position: relative;
+    left: 44%;
+    flex: 3;
+}
+.section-header__search-input{
+    display: block;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    color: #333;
+    font-family: 'Roboto',sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    padding: 8px 16px;
+    border-radius: 4px;
+    z-index: 1000;
+}
+/* NAVIGATION */
+.section-header__navigation{
+    display: flex;
+    position: relative;
+    left: 23%;
+}
+.section-header__navigation li{
+    list-style-type: none;
+}
+.section-header__navigation li a{
+    position: relative;
+    color: var(--white);
+    text-decoration: none;
+    margin-left: 80px;
+    transition: 0.25s;
+}
+.section-header__navigation li a:hover{
+    color: var(--red);
+}
+
+
+/* Content */
+.section-content{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 100px;
+    z-index: 1;
+}
+.section-content__heading{
+    font-size: 5em;
+    font-weight: 300;
+    color: var(--white);
+    text-align: center;
+}
+.section-content__heading-span{
+    font-weight: 700;
+}
+.section-content__btn{
+    display: inline-block;
+    background: var(--red);
+    padding: 16px 36px;
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 50px;
+    margin-top: 20px;
+    font-size: 1.25em;
+    transition: 0.25s;
+}
+.section-content__btn:hover{
+    letter-spacing: 4px;
+}
+.section-content__img{
+    max-width: 80%;
+}
+
+
+/* FOOTER */
+.section-footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.section-footer__sci{
+    display: flex;
+}
+.section-footer__sci li{
+    list-style-type: none;
+}
+.section-footer__sci li a{
+    color: var(--white);
+    font-size: 2em;
+    margin-right: 20px;
+    transition: 0.25s;
+}
+.section-footer__sci li a:hover{
+    color: var(--red);
+}
+
+/* DOTS */
+.section-footer__dots{
+    display: flex;
+}
+.section-footer__dots .section-footer__dots-dot{
+    width: 10px;
+    height: 10px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.section-footer__dots .section-footer__dots-dot.section-footer__dots-dot-active{
+    background: var(--white);
+}
+.section-slider{
+
+}
+.section-slider .section-slider__slides{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 100px;
+    transition: 0.25s;
+    opacity: 0;
+    pointer-events: none;
+}
+.section-slider .section-slider__slides.section-slider__slides-active{
+    opacity: 1;
+    top: 60%;
+}
+.section-slider .section-slider__slides-heading{
+    color: var(--white);
+    font-size: 3em;
+}
+.section-slider .section-slider__slides-heading:last-child{
+    text-align: end;
+}
+.section-slider .section-slider__slides-heading-span{
+    color: var(--red);
+    font-size: 0.5em;
+    font-weight: 400;
+    font-style: italic ;
+}
+
+/* Modal Boostrap Tab */
+
+.modal{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 1000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+  .modal.open{
+    display: flex;
+  }
+  .modal-container{
+    display: inline-block;
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    width: 500px;
+    min-height: 450px;
+    width: calc(100%-60px);
+    animation: loginFormEaseIn ease 0.5s;
+  }
+  .modal-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 12px;
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 1000000;
+  }
+  .modal-close:hover{
+    opacity: 0.6;
+  }
+  .modal-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 20px;
+  }
+  .modal-body{
+    position: absolute;
+    top: 18%;
+    left: 4%;
+    padding: 16px;
+  }
+  .modal-label{
+    display: block;
+    margin-bottom: 12px;
+  }
+  .modal-input{
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 12px;
+    width: 430px;
+  }
+  .forgot-pw{
+    display: block;
+    color: #41aeee;
+    text-decoration: none;
+    margin-top: -8px;
+  }
+  .login-btn{
+    font-size: 16px;
+    letter-spacing: 2px;
+    padding: 16px;
+    width: 100%;
+    border: none;
+    margin-top: 24px;
+    background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
+    color: #fff;
+    cursor: pointer;
+  }
+  .login-btn:hover{
+    opacity: 0.8;
+  }
+  .member-signup{
+    padding: 24px 100px;
+  }
+  .member-signup a{
+    text-decoration: none;
+    color: #41aeee;
+  }
+  
+  @keyframes loginFormEaseIn{
+    from{
+      opacity: 0;
+      transform: translateY(-140px);
+    }
+    to{
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  
